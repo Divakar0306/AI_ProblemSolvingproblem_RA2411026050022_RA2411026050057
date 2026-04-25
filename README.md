@@ -1,4 +1,3 @@
-# AI_ProblemSolvingproblem_RA2411026050022_RA2411026050057
 # Loan Approval Prediction System
 
 An end-to-end Machine Learning web application that predicts whether a loan applicant is approved or rejected based on their financial profile.
@@ -31,3 +30,27 @@ An end-to-end Machine Learning web application that predicts whether a loan appl
 
 ### 1. Web Application (Recommended)
 Launch the Flask backend server:
+```bash
+python app.py
+```
+Then, open your web browser and go to `http://127.0.0.1:5000/`.
+
+### 2. Command Line Interface
+If you prefer running the logic via the terminal:
+```bash
+python loan_approval.py
+```
+Follow the prompts in the console to input applicant data and receive predictions.
+
+## Project Structure
+```
+.
+├── app.py                # Flask web server and API
+├── loan_approval.py      # Core Machine Learning script (CLI version)
+├── requirements.txt      # Python dependencies
+├── static/
+│   ├── script.js         # Frontend Logic (API calls)
+│   └── style.css         # UI Styling (Glassmorphism design)
+└── templates/
+    └── index.html        # Main Web Page structure
+```

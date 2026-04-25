@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Approval Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob shape-1"></div>
+        <div class="blob shape-2"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <h1>Loan Approval Prediction</h1>
+            <p>Our intelligent system evaluates your profile in real-time to determine your loan eligibility.</p>
+        </header>
+
+        <section class="card">
+            <form id="prediction-form">
+                <div class="input-group">
+                    <label for="income">Annual Income ($)</label>
+                    <input type="number" id="income" placeholder="e.g., 50000" required min="0">
+                </div>
+                
+                <div class="input-group">
+                    <label for="credit_score">Credit Score</label>
+                    <input type="number" id="credit_score" placeholder="e.g., 720" required min="300" max="850">
+                </div>
+                
+                <div class="input-group">
+                    <label for="employment_status">Employment Status</label>
+                    <div class="custom-select-wrapper">
+                        <select id="employment_status" required>
+                            <option value="" disabled selected>Select status</option>
+                            <option value="Employed">Employed</option>
+                            <option value="Self-Employed">Self-Employed</option>
+                            <option value="Unemployed">Unemployed</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="loan_amount">Loan Amount ($)</label>
+                    <input type="number" id="loan_amount" placeholder="e.g., 15000" required min="0">
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submit-btn">
+                    <span class="btn-text">Predict Loan Status</span>
+                    <div class="spinner" id="spinner"></div>
+                </button>
+            </form>
+
+            <div id="result-container" class="result-container hidden">
+                <div id="result-icon" class="result-icon"></div>
+                <h2 id="result-text" class="result-text"></h2>
+            </div>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
